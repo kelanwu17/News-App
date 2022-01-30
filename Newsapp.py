@@ -1,10 +1,11 @@
 import requests
 import tkinter as tk
 
+country = input("What Country are you interested in (Alpha-2 Format)? ")
 
 def getNews():
     api_key = "85ced64dc13d4ac3b1084221bf8ffd47"
-    url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=" + api_key
+    url = "https://newsapi.org/v2/top-headlines?country=" + country + "&apiKey=" + api_key
     news = requests.get(url).json()
 
     articles = news["articles"]
